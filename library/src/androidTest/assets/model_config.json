@@ -1,0 +1,14 @@
+{
+  "input": {
+    "width": 225,
+    "height": 225
+  },
+  "output": {
+    "width": 225,
+    "height": 225
+  },
+  "model": {
+    "filePath": "model.tflite",
+    "classCount": 19
+  }
+}
