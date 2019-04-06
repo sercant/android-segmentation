@@ -1,11 +1,13 @@
 {
   "input": {
     "width": 225,
-    "height": 225
+    "height": 225,
+    "channelCount": 3
   },
   "output": {
     "width": 225,
-    "height": 225
+    "height": 225,
+    "channelCount": 1
   },
   "model": {
     "filePath": "model.tflite",

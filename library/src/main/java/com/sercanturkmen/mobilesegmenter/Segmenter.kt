@@ -49,7 +49,7 @@ class Segmenter(
             order(ByteOrder.nativeOrder())
         }
 
-    private val inputIntArray: IntArray = IntArray(config.inputWidth * config.inputHeight * config.inputChannelCount)
+    private val inputIntArray: IntArray = IntArray(config.inputWidth * config.inputHeight)
     private val outputIntArray: IntArray = IntArray(config.outputWidth * config.outputHeight)
 
     private fun prepareInputBuffer(bitmap: Bitmap) {
@@ -111,12 +111,13 @@ class Segmenter(
                     val model = obj.getJSONObject("model")
 
                     Config(
-                        model.getString("modelPath"),
+                        model.getString("filePath"),
                         input.getInt("width"),
                         input.getInt("height"),
                         output.getInt("width"),
                         output.getInt("height"),
-                        model.getInt("classCount")
+                        model.getInt("classCount"),
+                        input.getInt("channelCount")
                     )
                 } catch (e: Exception) {
                     e.printStackTrace()
