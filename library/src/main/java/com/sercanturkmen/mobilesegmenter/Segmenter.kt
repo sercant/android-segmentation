@@ -124,6 +124,22 @@ class Segmenter(
                     null
                 }
             }
+
+            @JvmStatic
+            fun fromJsonFile(context: Context, filePath: String): Config? {
+                return try {
+                    context.assets
+                        .open(filePath)
+                        .bufferedReader()
+                        .use {
+                            val json = it.readText()
+                            fromJson(json)
+                        }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    null
+                }
+            }
         }
     }
 }
